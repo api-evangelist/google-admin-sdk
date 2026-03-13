@@ -1,0 +1,207 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+$id: https://raw.githubusercontent.com/api-evangelist/google-admin-sdk/refs/heads/main/json-schema/json-schema.yml
+title: Google Admin SDK Directory API Schemas
+description: JSON Schema definitions for the Google Admin SDK Directory API resources.
+type: object
+$defs:
+  User:
+    type: object
+    title: Directory User
+    description: A Google Workspace user account.
+    properties:
+      kind:
+        type: string
+        const: admin#directory#user
+      id:
+        type: string
+        description: The unique ID for the user.
+      primaryEmail:
+        type: string
+        format: email
+        description: The user's primary email address.
+      name:
+        type: object
+        description: The user's name.
+        properties:
+          givenName:
+            type: string
+          familyName:
+            type: string
+          fullName:
+            type: string
+      isAdmin:
+        type: boolean
+        description: Whether the user has super administrator privileges.
+      isDelegatedAdmin:
+        type: boolean
+        description: Whether the user is a delegated administrator.
+      suspended:
+        type: boolean
+        description: Whether the user is suspended.
+      archived:
+        type: boolean
+        description: Whether the user is archived.
+      orgUnitPath:
+        type: string
+        description: The full path of the parent organization unit.
+      creationTime:
+        type: string
+        format: date-time
+      lastLoginTime:
+        type: string
+        format: date-time
+      isMailboxSetup:
+        type: boolean
+      password:
+        type: string
+        description: The user's password (write-only).
+      hashFunction:
+        type: string
+        description: The hash function used to store the password.
+      emails:
+        type: array
+        items:
+          type: object
+          properties:
+            address:
+              type: string
+            type:
+              type: string
+            primary:
+              type: boolean
+      phones:
+        type: array
+        items:
+          type: object
+          properties:
+            value:
+              type: string
+            type:
+              type: string
+            primary:
+              type: boolean
+  Group:
+    type: object
+    title: Directory Group
+    description: A Google Workspace group.
+    properties:
+      kind:
+        type: string
+        const: admin#directory#group
+      id:
+        type: string
+        description: The unique ID of the group.
+      email:
+        type: string
+        format: email
+        description: The group's email address.
+      name:
+        type: string
+        description: The group's display name.
+      description:
+        type: string
+        description: A description of the group.
+      directMembersCount:
+        type: string
+        description: The number of direct members.
+      adminCreated:
+        type: boolean
+        description: Whether the group was created by an administrator.
+      aliases:
+        type: array
+        items:
+          type: string
+      nonEditableAliases:
+        type: array
+        items:
+          type: string
+  Member:
+    type: object
+    title: Group Member
+    description: A member of a Google Workspace group.
+    properties:
+      kind:
+        type: string
+        const: admin#directory#member
+      id:
+        type: string
+      email:
+        type: string
+        format: email
+      role:
+        type: string
+        description: The member's role in the group.
+        enum: [MEMBER, MANAGER, OWNER]
+      type:
+        type: string
+        description: The type of group member.
+        enum: [USER, GROUP, EXTERNAL]
+      status:
+        type: string
+  OrgUnit:
+    type: object
+    title: Organizational Unit
+    description: An organizational unit in the domain.
+    properties:
+      kind:
+        type: string
+        const: admin#directory#orgUnit
+      orgUnitId:
+        type: string
+      name:
+        type: string
+        description: The organizational unit's name.
+      description:
+        type: string
+      orgUnitPath:
+        type: string
+        description: The full path to the organizational unit.
+      parentOrgUnitPath:
+        type: string
+      parentOrgUnitId:
+        type: string
+      blockInheritance:
+        type: boolean
+  Role:
+    type: object
+    title: Admin Role
+    description: An administrative role in the domain.
+    properties:
+      kind:
+        type: string
+        const: admin#directory#role
+      roleId:
+        type: string
+      roleName:
+        type: string
+      roleDescription:
+        type: string
+      isSystemRole:
+        type: boolean
+      isSuperAdminRole:
+        type: boolean
+      rolePrivileges:
+        type: array
+        items:
+          type: object
+          properties:
+            privilegeName:
+              type: string
+            serviceId:
+              type: string
+  Domain:
+    type: object
+    title: Domain
+    description: A domain associated with the customer.
+    properties:
+      kind:
+        type: string
+        const: admin#directory#domain
+      domainName:
+        type: string
+      isPrimary:
+        type: boolean
+      verified:
+        type: boolean
+      creationTime:
+        type: string

@@ -1,0 +1,70 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "admin": "https://admin.googleapis.com/admin/directory/v1/",
+    "goog": "https://developers.google.com/workspace/admin/directory/reference/rest/v1/",
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url",
+    "provider": "schema:provider",
+    "User": {
+      "@id": "goog:users",
+      "@context": {
+        "id": "schema:identifier",
+        "primaryEmail": "schema:email",
+        "name": "schema:name",
+        "isAdmin": "schema:hasCredential",
+        "suspended": "schema:status",
+        "orgUnitPath": "schema:memberOf",
+        "creationTime": "schema:dateCreated",
+        "lastLoginTime": "schema:lastReviewed"
+      }
+    },
+    "Group": {
+      "@id": "goog:groups",
+      "@context": {
+        "id": "schema:identifier",
+        "email": "schema:email",
+        "name": "schema:name",
+        "description": "schema:description",
+        "directMembersCount": "schema:size"
+      }
+    },
+    "Member": {
+      "@id": "goog:groups.members",
+      "@context": {
+        "id": "schema:identifier",
+        "email": "schema:email",
+        "role": "schema:roleName",
+        "type": "schema:additionalType"
+      }
+    },
+    "OrgUnit": {
+      "@id": "goog:orgunits",
+      "@context": {
+        "orgUnitId": "schema:identifier",
+        "name": "schema:name",
+        "description": "schema:description",
+        "orgUnitPath": "schema:url",
+        "parentOrgUnitPath": "schema:isPartOf"
+      }
+    },
+    "Domain": {
+      "@id": "goog:domains",
+      "@context": {
+        "domainName": "schema:name",
+        "isPrimary": "schema:mainEntity",
+        "verified": "schema:status"
+      }
+    }
+  },
+  "@type": "WebAPI",
+  "name": "Google Admin SDK Directory API",
+  "description": "The Admin SDK Directory API enables management of users, groups, devices, organizational units, and domains in a Google Workspace domain.",
+  "url": "https://developers.google.com/workspace/admin/directory/reference/rest",
+  "provider": {
+    "@type": "Organization",
+    "name": "Google",
+    "url": "https://developers.google.com"
+  }
+}

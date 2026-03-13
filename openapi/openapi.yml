@@ -1,0 +1,566 @@
+openapi: 3.1.0
+info:
+  title: Google Admin SDK Directory API
+  description: >-
+    The Admin SDK Directory API enables management of users, groups, devices,
+    organizational units, roles, domains, and other directory resources in a
+    Google Workspace domain.
+  version: directory_v1
+  contact:
+    name: Google
+    url: https://developers.google.com/workspace/admin/directory/reference/rest
+servers:
+  - url: https://admin.googleapis.com
+paths:
+  /admin/directory/v1/users:
+    get:
+      operationId: listUsers
+      summary: List users
+      description: Retrieves a paginated list of either deleted users or all users in a domain.
+      parameters:
+        - name: domain
+          in: query
+          schema:
+            type: string
+        - name: customer
+          in: query
+          schema:
+            type: string
+        - name: maxResults
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+        - name: query
+          in: query
+          schema:
+            type: string
+        - name: orderBy
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Users'
+    post:
+      operationId: createUser
+      summary: Create user
+      description: Creates a user.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+  /admin/directory/v1/users/{userKey}:
+    get:
+      operationId: getUser
+      summary: Get user
+      description: Retrieves a user.
+      parameters:
+        - name: userKey
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    put:
+      operationId: updateUser
+      summary: Update user
+      description: Updates a user.
+      parameters:
+        - name: userKey
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    patch:
+      operationId: patchUser
+      summary: Patch user
+      description: Patches a user.
+      parameters:
+        - name: userKey
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    delete:
+      operationId: deleteUser
+      summary: Delete user
+      description: Deletes a user.
+      parameters:
+        - name: userKey
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Successful deletion
+  /admin/directory/v1/users/{userKey}/makeAdmin:
+    post:
+      operationId: makeUserAdmin
+      summary: Make user admin
+      description: Makes a user a super administrator.
+      parameters:
+        - name: userKey
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: boolean
+      responses:
+        '204':
+          description: Successful response
+  /admin/directory/v1/groups:
+    get:
+      operationId: listGroups
+      summary: List groups
+      description: Retrieves all groups of a domain or a user.
+      parameters:
+        - name: domain
+          in: query
+          schema:
+            type: string
+        - name: customer
+          in: query
+          schema:
+            type: string
+        - name: maxResults
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+        - name: userKey
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Groups'
+    post:
+      operationId: createGroup
+      summary: Create group
+      description: Creates a group.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Group'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+  /admin/directory/v1/groups/{groupKey}:
+    get:
+      operationId: getGroup
+      summary: Get group
+      description: Retrieves a group's properties.
+      parameters:
+        - name: groupKey
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+    put:
+      operationId: updateGroup
+      summary: Update group
+      description: Updates a group's properties.
+      parameters:
+        - name: groupKey
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Group'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+    delete:
+      operationId: deleteGroup
+      summary: Delete group
+      description: Deletes a group.
+      parameters:
+        - name: groupKey
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Successful deletion
+  /admin/directory/v1/groups/{groupKey}/members:
+    get:
+      operationId: listMembers
+      summary: List group members
+      description: Retrieves a paginated list of all members in a group.
+      parameters:
+        - name: groupKey
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: maxResults
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Members'
+    post:
+      operationId: addMember
+      summary: Add group member
+      description: Adds a user to the specified group.
+      parameters:
+        - name: groupKey
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Member'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Member'
+  /admin/directory/v1/customer/{customerId}/orgunits:
+    get:
+      operationId: listOrgUnits
+      summary: List organizational units
+      description: Retrieves a list of all organizational units for an account.
+      parameters:
+        - name: customerId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrgUnits'
+    post:
+      operationId: createOrgUnit
+      summary: Create organizational unit
+      description: Adds an organizational unit.
+      parameters:
+        - name: customerId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OrgUnit'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrgUnit'
+  /admin/directory/v1/customer/{customerId}/devices/chromeos:
+    get:
+      operationId: listChromeOsDevices
+      summary: List Chrome OS devices
+      description: Retrieves a paginated list of Chrome OS devices.
+      parameters:
+        - name: customerId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: maxResults
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChromeOsDevices'
+  /admin/directory/v1/customer/{customerId}/devices/mobile:
+    get:
+      operationId: listMobileDevices
+      summary: List mobile devices
+      description: Retrieves a paginated list of all user-owned mobile devices.
+      parameters:
+        - name: customerId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: maxResults
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+  /admin/directory/v1/customer/{customerId}/roles:
+    get:
+      operationId: listRoles
+      summary: List roles
+      description: Retrieves a paginated list of all the roles in a domain.
+      parameters:
+        - name: customerId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+  /admin/directory/v1/customer/{customer}/domains:
+    get:
+      operationId: listDomains
+      summary: List domains
+      description: Lists the domains of the customer.
+      parameters:
+        - name: customer
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        kind:
+          type: string
+        id:
+          type: string
+        primaryEmail:
+          type: string
+        name:
+          type: object
+          properties:
+            givenName:
+              type: string
+            familyName:
+              type: string
+            fullName:
+              type: string
+        isAdmin:
+          type: boolean
+        isDelegatedAdmin:
+          type: boolean
+        suspended:
+          type: boolean
+        orgUnitPath:
+          type: string
+        creationTime:
+          type: string
+          format: date-time
+        lastLoginTime:
+          type: string
+          format: date-time
+        password:
+          type: string
+    Users:
+      type: object
+      properties:
+        kind:
+          type: string
+        users:
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
+        nextPageToken:
+          type: string
+    Group:
+      type: object
+      properties:
+        kind:
+          type: string
+        id:
+          type: string
+        email:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        directMembersCount:
+          type: string
+    Groups:
+      type: object
+      properties:
+        kind:
+          type: string
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/Group'
+        nextPageToken:
+          type: string
+    Member:
+      type: object
+      properties:
+        kind:
+          type: string
+        id:
+          type: string
+        email:
+          type: string
+        role:
+          type: string
+          enum: [MEMBER, MANAGER, OWNER]
+        type:
+          type: string
+          enum: [USER, GROUP, EXTERNAL]
+    Members:
+      type: object
+      properties:
+        kind:
+          type: string
+        members:
+          type: array
+          items:
+            $ref: '#/components/schemas/Member'
+        nextPageToken:
+          type: string
+    OrgUnit:
+      type: object
+      properties:
+        kind:
+          type: string
+        orgUnitId:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        orgUnitPath:
+          type: string
+        parentOrgUnitPath:
+          type: string
+        parentOrgUnitId:
+          type: string
+    OrgUnits:
+      type: object
+      properties:
+        kind:
+          type: string
+        organizationUnits:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrgUnit'
+    ChromeOsDevices:
+      type: object
+      properties:
+        kind:
+          type: string
+        chromeosdevices:
+          type: array
+          items:
+            type: object
+        nextPageToken:
+          type: string
