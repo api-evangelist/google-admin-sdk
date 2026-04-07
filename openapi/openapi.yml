@@ -15,7 +15,7 @@ paths:
   /admin/directory/v1/users:
     get:
       operationId: listUsers
-      summary: List users
+      summary: Google Admin SDK List users
       description: Retrieves a paginated list of either deleted users or all users in a domain.
       parameters:
         - name: domain
@@ -51,7 +51,7 @@ paths:
                 $ref: '#/components/schemas/Users'
     post:
       operationId: createUser
-      summary: Create user
+      summary: Google Admin SDK Create user
       description: Creates a user.
       requestBody:
         content:
@@ -68,7 +68,7 @@ paths:
   /admin/directory/v1/users/{userKey}:
     get:
       operationId: getUser
-      summary: Get user
+      summary: Google Admin SDK Get user
       description: Retrieves a user.
       parameters:
         - name: userKey
@@ -85,7 +85,7 @@ paths:
                 $ref: '#/components/schemas/User'
     put:
       operationId: updateUser
-      summary: Update user
+      summary: Google Admin SDK Update user
       description: Updates a user.
       parameters:
         - name: userKey
@@ -107,7 +107,7 @@ paths:
                 $ref: '#/components/schemas/User'
     patch:
       operationId: patchUser
-      summary: Patch user
+      summary: Google Admin SDK Patch user
       description: Patches a user.
       parameters:
         - name: userKey
@@ -129,7 +129,7 @@ paths:
                 $ref: '#/components/schemas/User'
     delete:
       operationId: deleteUser
-      summary: Delete user
+      summary: Google Admin SDK Delete user
       description: Deletes a user.
       parameters:
         - name: userKey
@@ -143,7 +143,7 @@ paths:
   /admin/directory/v1/users/{userKey}/makeAdmin:
     post:
       operationId: makeUserAdmin
-      summary: Make user admin
+      summary: Google Admin SDK Make user admin
       description: Makes a user a super administrator.
       parameters:
         - name: userKey
@@ -165,7 +165,7 @@ paths:
   /admin/directory/v1/groups:
     get:
       operationId: listGroups
-      summary: List groups
+      summary: Google Admin SDK List groups
       description: Retrieves all groups of a domain or a user.
       parameters:
         - name: domain
@@ -197,7 +197,7 @@ paths:
                 $ref: '#/components/schemas/Groups'
     post:
       operationId: createGroup
-      summary: Create group
+      summary: Google Admin SDK Create group
       description: Creates a group.
       requestBody:
         content:
@@ -214,7 +214,7 @@ paths:
   /admin/directory/v1/groups/{groupKey}:
     get:
       operationId: getGroup
-      summary: Get group
+      summary: Google Admin SDK Get group
       description: Retrieves a group's properties.
       parameters:
         - name: groupKey
@@ -231,7 +231,7 @@ paths:
                 $ref: '#/components/schemas/Group'
     put:
       operationId: updateGroup
-      summary: Update group
+      summary: Google Admin SDK Update group
       description: Updates a group's properties.
       parameters:
         - name: groupKey
@@ -253,7 +253,7 @@ paths:
                 $ref: '#/components/schemas/Group'
     delete:
       operationId: deleteGroup
-      summary: Delete group
+      summary: Google Admin SDK Delete group
       description: Deletes a group.
       parameters:
         - name: groupKey
@@ -267,7 +267,7 @@ paths:
   /admin/directory/v1/groups/{groupKey}/members:
     get:
       operationId: listMembers
-      summary: List group members
+      summary: Google Admin SDK List group members
       description: Retrieves a paginated list of all members in a group.
       parameters:
         - name: groupKey
@@ -292,7 +292,7 @@ paths:
                 $ref: '#/components/schemas/Members'
     post:
       operationId: addMember
-      summary: Add group member
+      summary: Google Admin SDK Add group member
       description: Adds a user to the specified group.
       parameters:
         - name: groupKey
@@ -315,7 +315,7 @@ paths:
   /admin/directory/v1/customer/{customerId}/orgunits:
     get:
       operationId: listOrgUnits
-      summary: List organizational units
+      summary: Google Admin SDK List organizational units
       description: Retrieves a list of all organizational units for an account.
       parameters:
         - name: customerId
@@ -332,7 +332,7 @@ paths:
                 $ref: '#/components/schemas/OrgUnits'
     post:
       operationId: createOrgUnit
-      summary: Create organizational unit
+      summary: Google Admin SDK Create organizational unit
       description: Adds an organizational unit.
       parameters:
         - name: customerId
@@ -355,7 +355,7 @@ paths:
   /admin/directory/v1/customer/{customerId}/devices/chromeos:
     get:
       operationId: listChromeOsDevices
-      summary: List Chrome OS devices
+      summary: Google Admin SDK List Chrome OS devices
       description: Retrieves a paginated list of Chrome OS devices.
       parameters:
         - name: customerId
@@ -381,7 +381,7 @@ paths:
   /admin/directory/v1/customer/{customerId}/devices/mobile:
     get:
       operationId: listMobileDevices
-      summary: List mobile devices
+      summary: Google Admin SDK List mobile devices
       description: Retrieves a paginated list of all user-owned mobile devices.
       parameters:
         - name: customerId
@@ -403,7 +403,7 @@ paths:
   /admin/directory/v1/customer/{customerId}/roles:
     get:
       operationId: listRoles
-      summary: List roles
+      summary: Google Admin SDK List roles
       description: Retrieves a paginated list of all the roles in a domain.
       parameters:
         - name: customerId
@@ -417,7 +417,7 @@ paths:
   /admin/directory/v1/customer/{customer}/domains:
     get:
       operationId: listDomains
-      summary: List domains
+      summary: Google Admin SDK List domains
       description: Lists the domains of the customer.
       parameters:
         - name: customer
