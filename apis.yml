@@ -45,7 +45,7 @@ apis:
       - Groups
       - Users
 common:
-  - type: Getting Started
+  - type: GettingStarted
     url: https://developers.google.com/workspace/admin/overview
   - type: Pricing
     url: https://workspace.google.com/pricing
