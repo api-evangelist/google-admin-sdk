@@ -1,0 +1,909 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Admin SDK Directory API — Admin
+  description: 'Google Admin SDK Directory API — Admin. 20 operations. Lead operation: Google Admin SDK List Chrome OS devices.
+    Self-contained Naftiko capability covering one Google Admin Sdk business surface.'
+  tags:
+  - Google Admin Sdk
+  - Admin
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_ADMIN_SDK_API_KEY: GOOGLE_ADMIN_SDK_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: openapi-admin
+    baseUri: https://admin.googleapis.com
+    description: Google Admin SDK Directory API — Admin business capability. Self-contained, no shared references.
+    resources:
+    - name: admin-directory-v1-customer-customerId-devices-chromeos
+      path: /admin/directory/v1/customer/{customerId}/devices/chromeos
+      operations:
+      - name: listchromeosdevices
+        method: GET
+        description: Google Admin SDK List Chrome OS devices
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: customerId
+          in: path
+          type: string
+          required: true
+        - name: maxResults
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+    - name: admin-directory-v1-customer-customerId-devices-mobile
+      path: /admin/directory/v1/customer/{customerId}/devices/mobile
+      operations:
+      - name: listmobiledevices
+        method: GET
+        description: Google Admin SDK List mobile devices
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: customerId
+          in: path
+          type: string
+          required: true
+        - name: maxResults
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+    - name: admin-directory-v1-customer-customerId-orgunits
+      path: /admin/directory/v1/customer/{customerId}/orgunits
+      operations:
+      - name: listorgunits
+        method: GET
+        description: Google Admin SDK List organizational units
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: customerId
+          in: path
+          type: string
+          required: true
+      - name: createorgunit
+        method: POST
+        description: Google Admin SDK Create organizational unit
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: customerId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: admin-directory-v1-customer-customerId-roles
+      path: /admin/directory/v1/customer/{customerId}/roles
+      operations:
+      - name: listroles
+        method: GET
+        description: Google Admin SDK List roles
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: customerId
+          in: path
+          type: string
+          required: true
+    - name: admin-directory-v1-customer-customer-domains
+      path: /admin/directory/v1/customer/{customer}/domains
+      operations:
+      - name: listdomains
+        method: GET
+        description: Google Admin SDK List domains
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: customer
+          in: path
+          type: string
+          required: true
+    - name: admin-directory-v1-groups
+      path: /admin/directory/v1/groups
+      operations:
+      - name: listgroups
+        method: GET
+        description: Google Admin SDK List groups
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: domain
+          in: query
+          type: string
+        - name: customer
+          in: query
+          type: string
+        - name: maxResults
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        - name: userKey
+          in: query
+          type: string
+      - name: creategroup
+        method: POST
+        description: Google Admin SDK Create group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: admin-directory-v1-groups-groupKey
+      path: /admin/directory/v1/groups/{groupKey}
+      operations:
+      - name: getgroup
+        method: GET
+        description: Google Admin SDK Get group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: groupKey
+          in: path
+          type: string
+          required: true
+      - name: updategroup
+        method: PUT
+        description: Google Admin SDK Update group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: groupKey
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: deletegroup
+        method: DELETE
+        description: Google Admin SDK Delete group
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: groupKey
+          in: path
+          type: string
+          required: true
+    - name: admin-directory-v1-groups-groupKey-members
+      path: /admin/directory/v1/groups/{groupKey}/members
+      operations:
+      - name: listmembers
+        method: GET
+        description: Google Admin SDK List group members
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: groupKey
+          in: path
+          type: string
+          required: true
+        - name: maxResults
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+      - name: addmember
+        method: POST
+        description: Google Admin SDK Add group member
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: groupKey
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: admin-directory-v1-users
+      path: /admin/directory/v1/users
+      operations:
+      - name: listusers
+        method: GET
+        description: Google Admin SDK List users
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: domain
+          in: query
+          type: string
+        - name: customer
+          in: query
+          type: string
+        - name: maxResults
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        - name: query
+          in: query
+          type: string
+        - name: orderBy
+          in: query
+          type: string
+      - name: createuser
+        method: POST
+        description: Google Admin SDK Create user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: admin-directory-v1-users-userKey
+      path: /admin/directory/v1/users/{userKey}
+      operations:
+      - name: getuser
+        method: GET
+        description: Google Admin SDK Get user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: userKey
+          in: path
+          type: string
+          required: true
+      - name: updateuser
+        method: PUT
+        description: Google Admin SDK Update user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: userKey
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: patchuser
+        method: PATCH
+        description: Google Admin SDK Patch user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: userKey
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: deleteuser
+        method: DELETE
+        description: Google Admin SDK Delete user
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: userKey
+          in: path
+          type: string
+          required: true
+    - name: admin-directory-v1-users-userKey-makeAdmin
+      path: /admin/directory/v1/users/{userKey}/makeAdmin
+      operations:
+      - name: makeuseradmin
+        method: POST
+        description: Google Admin SDK Make user admin
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: userKey
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+  exposes:
+  - type: rest
+    namespace: openapi-admin-rest
+    port: 8080
+    description: REST adapter for Google Admin SDK Directory API — Admin. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/admin/directory/v1/customer/{customerid}/devices/chromeos
+      name: admin-directory-v1-customer-customerid-devices-chromeos
+      description: REST surface for admin-directory-v1-customer-customerId-devices-chromeos.
+      operations:
+      - method: GET
+        name: listchromeosdevices
+        description: Google Admin SDK List Chrome OS devices
+        call: openapi-admin.listchromeosdevices
+        with:
+          customerId: rest.customerId
+          maxResults: rest.maxResults
+          pageToken: rest.pageToken
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/admin/directory/v1/customer/{customerid}/devices/mobile
+      name: admin-directory-v1-customer-customerid-devices-mobile
+      description: REST surface for admin-directory-v1-customer-customerId-devices-mobile.
+      operations:
+      - method: GET
+        name: listmobiledevices
+        description: Google Admin SDK List mobile devices
+        call: openapi-admin.listmobiledevices
+        with:
+          customerId: rest.customerId
+          maxResults: rest.maxResults
+          pageToken: rest.pageToken
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/admin/directory/v1/customer/{customerid}/orgunits
+      name: admin-directory-v1-customer-customerid-orgunits
+      description: REST surface for admin-directory-v1-customer-customerId-orgunits.
+      operations:
+      - method: GET
+        name: listorgunits
+        description: Google Admin SDK List organizational units
+        call: openapi-admin.listorgunits
+        with:
+          customerId: rest.customerId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createorgunit
+        description: Google Admin SDK Create organizational unit
+        call: openapi-admin.createorgunit
+        with:
+          customerId: rest.customerId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/admin/directory/v1/customer/{customerid}/roles
+      name: admin-directory-v1-customer-customerid-roles
+      description: REST surface for admin-directory-v1-customer-customerId-roles.
+      operations:
+      - method: GET
+        name: listroles
+        description: Google Admin SDK List roles
+        call: openapi-admin.listroles
+        with:
+          customerId: rest.customerId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/admin/directory/v1/customer/{customer}/domains
+      name: admin-directory-v1-customer-customer-domains
+      description: REST surface for admin-directory-v1-customer-customer-domains.
+      operations:
+      - method: GET
+        name: listdomains
+        description: Google Admin SDK List domains
+        call: openapi-admin.listdomains
+        with:
+          customer: rest.customer
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/admin/directory/v1/groups
+      name: admin-directory-v1-groups
+      description: REST surface for admin-directory-v1-groups.
+      operations:
+      - method: GET
+        name: listgroups
+        description: Google Admin SDK List groups
+        call: openapi-admin.listgroups
+        with:
+          domain: rest.domain
+          customer: rest.customer
+          maxResults: rest.maxResults
+          pageToken: rest.pageToken
+          userKey: rest.userKey
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: creategroup
+        description: Google Admin SDK Create group
+        call: openapi-admin.creategroup
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/admin/directory/v1/groups/{groupkey}
+      name: admin-directory-v1-groups-groupkey
+      description: REST surface for admin-directory-v1-groups-groupKey.
+      operations:
+      - method: GET
+        name: getgroup
+        description: Google Admin SDK Get group
+        call: openapi-admin.getgroup
+        with:
+          groupKey: rest.groupKey
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updategroup
+        description: Google Admin SDK Update group
+        call: openapi-admin.updategroup
+        with:
+          groupKey: rest.groupKey
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletegroup
+        description: Google Admin SDK Delete group
+        call: openapi-admin.deletegroup
+        with:
+          groupKey: rest.groupKey
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/admin/directory/v1/groups/{groupkey}/members
+      name: admin-directory-v1-groups-groupkey-members
+      description: REST surface for admin-directory-v1-groups-groupKey-members.
+      operations:
+      - method: GET
+        name: listmembers
+        description: Google Admin SDK List group members
+        call: openapi-admin.listmembers
+        with:
+          groupKey: rest.groupKey
+          maxResults: rest.maxResults
+          pageToken: rest.pageToken
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: addmember
+        description: Google Admin SDK Add group member
+        call: openapi-admin.addmember
+        with:
+          groupKey: rest.groupKey
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/admin/directory/v1/users
+      name: admin-directory-v1-users
+      description: REST surface for admin-directory-v1-users.
+      operations:
+      - method: GET
+        name: listusers
+        description: Google Admin SDK List users
+        call: openapi-admin.listusers
+        with:
+          domain: rest.domain
+          customer: rest.customer
+          maxResults: rest.maxResults
+          pageToken: rest.pageToken
+          query: rest.query
+          orderBy: rest.orderBy
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createuser
+        description: Google Admin SDK Create user
+        call: openapi-admin.createuser
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/admin/directory/v1/users/{userkey}
+      name: admin-directory-v1-users-userkey
+      description: REST surface for admin-directory-v1-users-userKey.
+      operations:
+      - method: GET
+        name: getuser
+        description: Google Admin SDK Get user
+        call: openapi-admin.getuser
+        with:
+          userKey: rest.userKey
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: updateuser
+        description: Google Admin SDK Update user
+        call: openapi-admin.updateuser
+        with:
+          userKey: rest.userKey
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patchuser
+        description: Google Admin SDK Patch user
+        call: openapi-admin.patchuser
+        with:
+          userKey: rest.userKey
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deleteuser
+        description: Google Admin SDK Delete user
+        call: openapi-admin.deleteuser
+        with:
+          userKey: rest.userKey
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/admin/directory/v1/users/{userkey}/makeadmin
+      name: admin-directory-v1-users-userkey-makeadmin
+      description: REST surface for admin-directory-v1-users-userKey-makeAdmin.
+      operations:
+      - method: POST
+        name: makeuseradmin
+        description: Google Admin SDK Make user admin
+        call: openapi-admin.makeuseradmin
+        with:
+          userKey: rest.userKey
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: openapi-admin-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Admin SDK Directory API — Admin. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: google-admin-sdk-list-chrome
+      description: Google Admin SDK List Chrome OS devices
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-admin.listchromeosdevices
+      with:
+        customerId: tools.customerId
+        maxResults: tools.maxResults
+        pageToken: tools.pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-admin-sdk-list-mobile
+      description: Google Admin SDK List mobile devices
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-admin.listmobiledevices
+      with:
+        customerId: tools.customerId
+        maxResults: tools.maxResults
+        pageToken: tools.pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-admin-sdk-list-organizational
+      description: Google Admin SDK List organizational units
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-admin.listorgunits
+      with:
+        customerId: tools.customerId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-admin-sdk-create-organizational
+      description: Google Admin SDK Create organizational unit
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openapi-admin.createorgunit
+      with:
+        customerId: tools.customerId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-admin-sdk-list-roles
+      description: Google Admin SDK List roles
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-admin.listroles
+      with:
+        customerId: tools.customerId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-admin-sdk-list-domains
+      description: Google Admin SDK List domains
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-admin.listdomains
+      with:
+        customer: tools.customer
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-admin-sdk-list-groups
+      description: Google Admin SDK List groups
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-admin.listgroups
+      with:
+        domain: tools.domain
+        customer: tools.customer
+        maxResults: tools.maxResults
+        pageToken: tools.pageToken
+        userKey: tools.userKey
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-admin-sdk-create-group
+      description: Google Admin SDK Create group
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openapi-admin.creategroup
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-admin-sdk-get-group
+      description: Google Admin SDK Get group
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-admin.getgroup
+      with:
+        groupKey: tools.groupKey
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-admin-sdk-update-group
+      description: Google Admin SDK Update group
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: openapi-admin.updategroup
+      with:
+        groupKey: tools.groupKey
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-admin-sdk-delete-group
+      description: Google Admin SDK Delete group
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: openapi-admin.deletegroup
+      with:
+        groupKey: tools.groupKey
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-admin-sdk-list-group
+      description: Google Admin SDK List group members
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-admin.listmembers
+      with:
+        groupKey: tools.groupKey
+        maxResults: tools.maxResults
+        pageToken: tools.pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-admin-sdk-add-group
+      description: Google Admin SDK Add group member
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openapi-admin.addmember
+      with:
+        groupKey: tools.groupKey
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-admin-sdk-list-users
+      description: Google Admin SDK List users
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-admin.listusers
+      with:
+        domain: tools.domain
+        customer: tools.customer
+        maxResults: tools.maxResults
+        pageToken: tools.pageToken
+        query: tools.query
+        orderBy: tools.orderBy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-admin-sdk-create-user
+      description: Google Admin SDK Create user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openapi-admin.createuser
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-admin-sdk-get-user
+      description: Google Admin SDK Get user
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-admin.getuser
+      with:
+        userKey: tools.userKey
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-admin-sdk-update-user
+      description: Google Admin SDK Update user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: openapi-admin.updateuser
+      with:
+        userKey: tools.userKey
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-admin-sdk-patch-user
+      description: Google Admin SDK Patch user
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: openapi-admin.patchuser
+      with:
+        userKey: tools.userKey
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-admin-sdk-delete-user
+      description: Google Admin SDK Delete user
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: openapi-admin.deleteuser
+      with:
+        userKey: tools.userKey
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-admin-sdk-make-user
+      description: Google Admin SDK Make user admin
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: openapi-admin.makeuseradmin
+      with:
+        userKey: tools.userKey
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
