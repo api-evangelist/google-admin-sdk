@@ -11,43 +11,45 @@ created: '2026-03-13'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 tags:
-- Administration
-- Devices
-- Directory
-- Enterprise
-- Google
-- Google Workspace
-- Groups
-- Users
-apis:
-- aid: google-admin-sdk:google-admin-sdk-directory-api
-  name: Google Admin SDK Directory API
-  description: The Admin SDK Directory API enables management of users, groups, devices, organizational units, roles, domains,
-    and other directory resources in a Google Workspace domain.
-  humanURL: https://developers.google.com/workspace/admin/directory/reference/rest
-  baseURL: https://admin.googleapis.com
-  properties:
-  - type: OpenAPI
-    url: openapi/openapi.yml
-  - type: JSONSchema
-    url: json-schema/json-schema.yml
-  - type: JSONLD
-    url: json-ld/json-ld.jsonld
-  - type: NaftikoCapability
-    url: capabilities/openapi-admin.yaml
-  tags:
   - Administration
   - Devices
   - Directory
+  - Enterprise
+  - Google
+  - Google Workspace
   - Groups
   - Users
+apis:
+  - aid: google-admin-sdk:google-admin-sdk-directory-api
+    name: Google Admin SDK Directory API
+    description: The Admin SDK Directory API enables management of users, groups, devices, organizational units, roles, domains,
+      and other directory resources in a Google Workspace domain.
+    humanURL: https://developers.google.com/workspace/admin/directory/reference/rest
+    baseURL: https://admin.googleapis.com
+    properties:
+    - type: OpenAPI
+      url: openapi/openapi.yml
+    - type: JSONSchema
+      url: json-schema/json-schema.yml
+    - type: JSONLD
+      url: json-ld/json-ld.jsonld
+    - type: NaftikoCapability
+      url: capabilities/openapi-admin.yaml
+    tags:
+    - Administration
+    - Devices
+    - Directory
+    - Groups
+    - Users
 common:
-- type: GettingStarted
-  url: https://developers.google.com/workspace/admin/overview
-- type: Pricing
-  url: https://workspace.google.com/pricing
-- type: JSONLD
-  url: json-ld/json-ld.jsonld
+  - type: GitHubOrganization
+    url: https://github.com/googleapis
+  - type: GettingStarted
+    url: https://developers.google.com/workspace/admin/overview
+  - type: Pricing
+    url: https://workspace.google.com/pricing
+  - type: JSONLD
+    url: json-ld/json-ld.jsonld
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
