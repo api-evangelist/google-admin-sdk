@@ -1,43 +1,62 @@
-# Google Admin SDK
+# Google Admin SDK (google-admin-sdk)
 
 The Google Admin SDK provides a collection of RESTful APIs for managing Google Workspace organizations at scale. It includes the Directory API for managing users, groups, devices, and organizational units; the Reports API for auditing activity and usage; and the Data Transfer API for migrating data between users. These APIs enable programmatic integration with enterprise IT infrastructure.
 
-## Base URL
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/google-admin-sdk/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/google-admin-sdk/refs/heads/main/apis.yml)
 
-```
-https://admin.googleapis.com
-```
+## Scope
 
-## Resources
+- **Type:** Index
 
-The Admin SDK Directory API provides the following resources:
+## Tags
 
-- **Users** - Create, read, update, delete, and manage user accounts
-- **Groups** - Manage groups and group memberships
-- **Members** - Add, remove, and list group members
-- **Organizational Units** - Manage the organizational hierarchy
-- **Chrome OS Devices** - Manage Chrome OS device inventory
-- **Mobile Devices** - Manage mobile device inventory
-- **Roles** - Define and assign administrative roles
-- **Domains** - Manage domain settings
-- **Customers** - Manage customer account information
-- **Tokens** - Manage OAuth tokens
-- **Schemas** - Define custom user attribute schemas
+- Administration
+- Devices
+- Directory
+- Enterprise
+- Google
+- Google Workspace
+- Groups
+- Users
 
-## Artifacts
+## Timestamps
 
-| Artifact | Path |
-|----------|------|
-| APIs.yml | [apis.yml](apis.yml) |
-| OpenAPI 3.1.0 | [openapi/openapi.yml](openapi/openapi.yml) |
-| JSON Schema (Draft 2020-12) | [json-schema/json-schema.yml](json-schema/json-schema.yml) |
-| JSON-LD Context | [json-ld/json-ld.jsonld](json-ld/json-ld.jsonld) |
+- **Created:** 2026-03-13
+- **Modified:** 2026-05-19
 
-## Documentation
+## APIs
 
-- [Admin SDK Overview](https://developers.google.com/workspace/admin/overview)
-- [Directory API Reference](https://developers.google.com/workspace/admin/directory/reference/rest)
+### Google Admin SDK Directory API
+
+The Admin SDK Directory API enables management of users, groups, devices, organizational units, roles, domains, and other directory resources in a Google Workspace domain.
+
+- **Human URL:** [https://developers.google.com/workspace/admin/directory/reference/rest](https://developers.google.com/workspace/admin/directory/reference/rest)
+- **Base URL:** `https://admin.googleapis.com`
+
+#### Tags
+
+- Administration
+- Devices
+- Directory
+- Groups
+- Users
+
+#### Properties
+
+- [OpenAPI](openapi/openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/openapi.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/openapi.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [JSON Schema](json-schema/json-schema.yml) — [JSON Schema](https://json-schema.org/specification)
+- [JSON-LD](json-ld/json-ld.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+
+## Common Properties
+
+- [GitHub Organization](https://github.com/googleapis)
+- [Getting Started](https://developers.google.com/workspace/admin/overview)
+- [Pricing](https://workspace.google.com/pricing)
+- [JSON-LD](json-ld/json-ld.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
 
 ## Maintainers
 
-- **Kin Lane** - kin@apievangelist.com
+**FN:** Kin Lane
+**Email:** kin@apievangelist.com
