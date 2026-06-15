@@ -1,0 +1,471 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Admin SDK Directory API",
+    "version": "directory_v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Admin",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Admin SDK List users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://admin.googleapis.com/admin/directory/v1/users",
+            "params": [
+              {
+                "name": "domain",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customer",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "query",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "orderBy",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieves a paginated list of either deleted users or all users in a domain."
+        },
+        {
+          "info": {
+            "name": "Google Admin SDK Create user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://admin.googleapis.com/admin/directory/v1/users",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a user."
+        },
+        {
+          "info": {
+            "name": "Google Admin SDK Get user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://admin.googleapis.com/admin/directory/v1/users/:userKey",
+            "params": [
+              {
+                "name": "userKey",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieves a user."
+        },
+        {
+          "info": {
+            "name": "Google Admin SDK Update user",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://admin.googleapis.com/admin/directory/v1/users/:userKey",
+            "params": [
+              {
+                "name": "userKey",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a user."
+        },
+        {
+          "info": {
+            "name": "Google Admin SDK Patch user",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://admin.googleapis.com/admin/directory/v1/users/:userKey",
+            "params": [
+              {
+                "name": "userKey",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Patches a user."
+        },
+        {
+          "info": {
+            "name": "Google Admin SDK Delete user",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://admin.googleapis.com/admin/directory/v1/users/:userKey",
+            "params": [
+              {
+                "name": "userKey",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes a user."
+        },
+        {
+          "info": {
+            "name": "Google Admin SDK Make user admin",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://admin.googleapis.com/admin/directory/v1/users/:userKey/makeAdmin",
+            "params": [
+              {
+                "name": "userKey",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Makes a user a super administrator."
+        },
+        {
+          "info": {
+            "name": "Google Admin SDK List groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://admin.googleapis.com/admin/directory/v1/groups",
+            "params": [
+              {
+                "name": "domain",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customer",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "userKey",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieves all groups of a domain or a user."
+        },
+        {
+          "info": {
+            "name": "Google Admin SDK Create group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://admin.googleapis.com/admin/directory/v1/groups",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a group."
+        },
+        {
+          "info": {
+            "name": "Google Admin SDK Get group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://admin.googleapis.com/admin/directory/v1/groups/:groupKey",
+            "params": [
+              {
+                "name": "groupKey",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieves a group's properties."
+        },
+        {
+          "info": {
+            "name": "Google Admin SDK Update group",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://admin.googleapis.com/admin/directory/v1/groups/:groupKey",
+            "params": [
+              {
+                "name": "groupKey",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a group's properties."
+        },
+        {
+          "info": {
+            "name": "Google Admin SDK Delete group",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://admin.googleapis.com/admin/directory/v1/groups/:groupKey",
+            "params": [
+              {
+                "name": "groupKey",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes a group."
+        },
+        {
+          "info": {
+            "name": "Google Admin SDK List group members",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://admin.googleapis.com/admin/directory/v1/groups/:groupKey/members",
+            "params": [
+              {
+                "name": "groupKey",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieves a paginated list of all members in a group."
+        },
+        {
+          "info": {
+            "name": "Google Admin SDK Add group member",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://admin.googleapis.com/admin/directory/v1/groups/:groupKey/members",
+            "params": [
+              {
+                "name": "groupKey",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Adds a user to the specified group."
+        },
+        {
+          "info": {
+            "name": "Google Admin SDK List organizational units",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://admin.googleapis.com/admin/directory/v1/customer/:customerId/orgunits",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieves a list of all organizational units for an account."
+        },
+        {
+          "info": {
+            "name": "Google Admin SDK Create organizational unit",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://admin.googleapis.com/admin/directory/v1/customer/:customerId/orgunits",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Adds an organizational unit."
+        },
+        {
+          "info": {
+            "name": "Google Admin SDK List Chrome OS devices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://admin.googleapis.com/admin/directory/v1/customer/:customerId/devices/chromeos",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieves a paginated list of Chrome OS devices."
+        },
+        {
+          "info": {
+            "name": "Google Admin SDK List mobile devices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://admin.googleapis.com/admin/directory/v1/customer/:customerId/devices/mobile",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieves a paginated list of all user-owned mobile devices."
+        },
+        {
+          "info": {
+            "name": "Google Admin SDK List roles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://admin.googleapis.com/admin/directory/v1/customer/:customerId/roles",
+            "params": [
+              {
+                "name": "customerId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieves a paginated list of all the roles in a domain."
+        },
+        {
+          "info": {
+            "name": "Google Admin SDK List domains",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://admin.googleapis.com/admin/directory/v1/customer/:customer/domains",
+            "params": [
+              {
+                "name": "customer",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists the domains of the customer."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
