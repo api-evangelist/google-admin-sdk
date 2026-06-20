@@ -6,7 +6,7 @@ description: >-
   activity and usage; and the Data Transfer API for migrating data between users. These APIs enable programmatic
   integration with enterprise IT infrastructure.
 type: Index
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-admin-sdk/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
