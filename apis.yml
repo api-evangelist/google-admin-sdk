@@ -42,6 +42,8 @@ apis:
       - Groups
       - Users
 common:
+  - type: AgenticAccess
+    url: agentic-access/google-admin-sdk-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/google-admin-sdk-vulnerability-disclosure.yml
   - type: DomainSecurity
