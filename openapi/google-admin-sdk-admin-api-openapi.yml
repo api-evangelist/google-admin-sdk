@@ -1,16 +1,15 @@
 openapi: 3.1.0
 info:
-  title: Google Admin SDK Directory API
-  description: >-
-    The Admin SDK Directory API enables management of users, groups, devices,
-    organizational units, roles, domains, and other directory resources in a
-    Google Workspace domain.
+  title: Google SDK Directory Admin API
+  description: The Admin SDK Directory API enables management of users, groups, devices, organizational units, roles, domains, and other directory resources in a Google Workspace domain.
   version: directory_v1
   contact:
     name: Google
     url: https://developers.google.com/workspace/admin/directory/reference/rest
 servers:
-  - url: https://admin.googleapis.com
+- url: https://admin.googleapis.com
+tags:
+- name: Admin
 paths:
   /admin/directory/v1/users:
     get:
@@ -18,30 +17,30 @@ paths:
       summary: Google Admin SDK List users
       description: Retrieves a paginated list of either deleted users or all users in a domain.
       parameters:
-        - name: domain
-          in: query
-          schema:
-            type: string
-        - name: customer
-          in: query
-          schema:
-            type: string
-        - name: maxResults
-          in: query
-          schema:
-            type: integer
-        - name: pageToken
-          in: query
-          schema:
-            type: string
-        - name: query
-          in: query
-          schema:
-            type: string
-        - name: orderBy
-          in: query
-          schema:
-            type: string
+      - name: domain
+        in: query
+        schema:
+          type: string
+      - name: customer
+        in: query
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        schema:
+          type: integer
+      - name: pageToken
+        in: query
+        schema:
+          type: string
+      - name: query
+        in: query
+        schema:
+          type: string
+      - name: orderBy
+        in: query
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response
@@ -50,7 +49,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Users'
       tags:
-        - Admin
+      - Admin
     post:
       operationId: createUser
       summary: Google Admin SDK Create user
@@ -68,18 +67,18 @@ paths:
               schema:
                 $ref: '#/components/schemas/User'
       tags:
-        - Admin
+      - Admin
   /admin/directory/v1/users/{userKey}:
     get:
       operationId: getUser
       summary: Google Admin SDK Get user
       description: Retrieves a user.
       parameters:
-        - name: userKey
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: userKey
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response
@@ -88,17 +87,17 @@ paths:
               schema:
                 $ref: '#/components/schemas/User'
       tags:
-        - Admin
+      - Admin
     put:
       operationId: updateUser
       summary: Google Admin SDK Update user
       description: Updates a user.
       parameters:
-        - name: userKey
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: userKey
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         content:
           application/json:
@@ -112,17 +111,17 @@ paths:
               schema:
                 $ref: '#/components/schemas/User'
       tags:
-        - Admin
+      - Admin
     patch:
       operationId: patchUser
       summary: Google Admin SDK Patch user
       description: Patches a user.
       parameters:
-        - name: userKey
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: userKey
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         content:
           application/json:
@@ -136,33 +135,33 @@ paths:
               schema:
                 $ref: '#/components/schemas/User'
       tags:
-        - Admin
+      - Admin
     delete:
       operationId: deleteUser
       summary: Google Admin SDK Delete user
       description: Deletes a user.
       parameters:
-        - name: userKey
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: userKey
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '204':
           description: Successful deletion
       tags:
-        - Admin
+      - Admin
   /admin/directory/v1/users/{userKey}/makeAdmin:
     post:
       operationId: makeUserAdmin
       summary: Google Admin SDK Make user admin
       description: Makes a user a super administrator.
       parameters:
-        - name: userKey
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: userKey
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         content:
           application/json:
@@ -175,33 +174,33 @@ paths:
         '204':
           description: Successful response
       tags:
-        - Admin
+      - Admin
   /admin/directory/v1/groups:
     get:
       operationId: listGroups
       summary: Google Admin SDK List groups
       description: Retrieves all groups of a domain or a user.
       parameters:
-        - name: domain
-          in: query
-          schema:
-            type: string
-        - name: customer
-          in: query
-          schema:
-            type: string
-        - name: maxResults
-          in: query
-          schema:
-            type: integer
-        - name: pageToken
-          in: query
-          schema:
-            type: string
-        - name: userKey
-          in: query
-          schema:
-            type: string
+      - name: domain
+        in: query
+        schema:
+          type: string
+      - name: customer
+        in: query
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        schema:
+          type: integer
+      - name: pageToken
+        in: query
+        schema:
+          type: string
+      - name: userKey
+        in: query
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response
@@ -210,7 +209,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Groups'
       tags:
-        - Admin
+      - Admin
     post:
       operationId: createGroup
       summary: Google Admin SDK Create group
@@ -228,18 +227,18 @@ paths:
               schema:
                 $ref: '#/components/schemas/Group'
       tags:
-        - Admin
+      - Admin
   /admin/directory/v1/groups/{groupKey}:
     get:
       operationId: getGroup
       summary: Google Admin SDK Get group
       description: Retrieves a group's properties.
       parameters:
-        - name: groupKey
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: groupKey
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response
@@ -248,17 +247,17 @@ paths:
               schema:
                 $ref: '#/components/schemas/Group'
       tags:
-        - Admin
+      - Admin
     put:
       operationId: updateGroup
       summary: Google Admin SDK Update group
       description: Updates a group's properties.
       parameters:
-        - name: groupKey
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: groupKey
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         content:
           application/json:
@@ -272,41 +271,41 @@ paths:
               schema:
                 $ref: '#/components/schemas/Group'
       tags:
-        - Admin
+      - Admin
     delete:
       operationId: deleteGroup
       summary: Google Admin SDK Delete group
       description: Deletes a group.
       parameters:
-        - name: groupKey
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: groupKey
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '204':
           description: Successful deletion
       tags:
-        - Admin
+      - Admin
   /admin/directory/v1/groups/{groupKey}/members:
     get:
       operationId: listMembers
       summary: Google Admin SDK List group members
       description: Retrieves a paginated list of all members in a group.
       parameters:
-        - name: groupKey
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: maxResults
-          in: query
-          schema:
-            type: integer
-        - name: pageToken
-          in: query
-          schema:
-            type: string
+      - name: groupKey
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        schema:
+          type: integer
+      - name: pageToken
+        in: query
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response
@@ -315,17 +314,17 @@ paths:
               schema:
                 $ref: '#/components/schemas/Members'
       tags:
-        - Admin
+      - Admin
     post:
       operationId: addMember
       summary: Google Admin SDK Add group member
       description: Adds a user to the specified group.
       parameters:
-        - name: groupKey
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: groupKey
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         content:
           application/json:
@@ -339,18 +338,18 @@ paths:
               schema:
                 $ref: '#/components/schemas/Member'
       tags:
-        - Admin
+      - Admin
   /admin/directory/v1/customer/{customerId}/orgunits:
     get:
       operationId: listOrgUnits
       summary: Google Admin SDK List organizational units
       description: Retrieves a list of all organizational units for an account.
       parameters:
-        - name: customerId
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: customerId
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response
@@ -359,17 +358,17 @@ paths:
               schema:
                 $ref: '#/components/schemas/OrgUnits'
       tags:
-        - Admin
+      - Admin
     post:
       operationId: createOrgUnit
       summary: Google Admin SDK Create organizational unit
       description: Adds an organizational unit.
       parameters:
-        - name: customerId
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: customerId
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         content:
           application/json:
@@ -383,26 +382,26 @@ paths:
               schema:
                 $ref: '#/components/schemas/OrgUnit'
       tags:
-        - Admin
+      - Admin
   /admin/directory/v1/customer/{customerId}/devices/chromeos:
     get:
       operationId: listChromeOsDevices
       summary: Google Admin SDK List Chrome OS devices
       description: Retrieves a paginated list of Chrome OS devices.
       parameters:
-        - name: customerId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: maxResults
-          in: query
-          schema:
-            type: integer
-        - name: pageToken
-          in: query
-          schema:
-            type: string
+      - name: customerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        schema:
+          type: integer
+      - name: pageToken
+        in: query
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response
@@ -411,65 +410,134 @@ paths:
               schema:
                 $ref: '#/components/schemas/ChromeOsDevices'
       tags:
-        - Admin
+      - Admin
   /admin/directory/v1/customer/{customerId}/devices/mobile:
     get:
       operationId: listMobileDevices
       summary: Google Admin SDK List mobile devices
       description: Retrieves a paginated list of all user-owned mobile devices.
       parameters:
-        - name: customerId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: maxResults
-          in: query
-          schema:
-            type: integer
-        - name: pageToken
-          in: query
-          schema:
-            type: string
+      - name: customerId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: maxResults
+        in: query
+        schema:
+          type: integer
+      - name: pageToken
+        in: query
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response
       tags:
-        - Admin
+      - Admin
   /admin/directory/v1/customer/{customerId}/roles:
     get:
       operationId: listRoles
       summary: Google Admin SDK List roles
       description: Retrieves a paginated list of all the roles in a domain.
       parameters:
-        - name: customerId
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: customerId
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response
       tags:
-        - Admin
+      - Admin
   /admin/directory/v1/customer/{customer}/domains:
     get:
       operationId: listDomains
       summary: Google Admin SDK List domains
       description: Lists the domains of the customer.
       parameters:
-        - name: customer
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: customer
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response
       tags:
-        - Admin
+      - Admin
 components:
   schemas:
+    Member:
+      type: object
+      properties:
+        kind:
+          type: string
+        id:
+          type: string
+        email:
+          type: string
+        role:
+          type: string
+          enum:
+          - MEMBER
+          - MANAGER
+          - OWNER
+        type:
+          type: string
+          enum:
+          - USER
+          - GROUP
+          - EXTERNAL
+    Groups:
+      type: object
+      properties:
+        kind:
+          type: string
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/Group'
+        nextPageToken:
+          type: string
+    ChromeOsDevices:
+      type: object
+      properties:
+        kind:
+          type: string
+        chromeosdevices:
+          type: array
+          items:
+            type: object
+        nextPageToken:
+          type: string
+    OrgUnit:
+      type: object
+      properties:
+        kind:
+          type: string
+        orgUnitId:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        orgUnitPath:
+          type: string
+        parentOrgUnitPath:
+          type: string
+        parentOrgUnitId:
+          type: string
+    OrgUnits:
+      type: object
+      properties:
+        kind:
+          type: string
+        organizationUnits:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrgUnit'
     User:
       type: object
       properties:
@@ -530,32 +598,6 @@ components:
           type: string
         directMembersCount:
           type: string
-    Groups:
-      type: object
-      properties:
-        kind:
-          type: string
-        groups:
-          type: array
-          items:
-            $ref: '#/components/schemas/Group'
-        nextPageToken:
-          type: string
-    Member:
-      type: object
-      properties:
-        kind:
-          type: string
-        id:
-          type: string
-        email:
-          type: string
-        role:
-          type: string
-          enum: [MEMBER, MANAGER, OWNER]
-        type:
-          type: string
-          enum: [USER, GROUP, EXTERNAL]
     Members:
       type: object
       properties:
@@ -567,42 +609,3 @@ components:
             $ref: '#/components/schemas/Member'
         nextPageToken:
           type: string
-    OrgUnit:
-      type: object
-      properties:
-        kind:
-          type: string
-        orgUnitId:
-          type: string
-        name:
-          type: string
-        description:
-          type: string
-        orgUnitPath:
-          type: string
-        parentOrgUnitPath:
-          type: string
-        parentOrgUnitId:
-          type: string
-    OrgUnits:
-      type: object
-      properties:
-        kind:
-          type: string
-        organizationUnits:
-          type: array
-          items:
-            $ref: '#/components/schemas/OrgUnit'
-    ChromeOsDevices:
-      type: object
-      properties:
-        kind:
-          type: string
-        chromeosdevices:
-          type: array
-          items:
-            type: object
-        nextPageToken:
-          type: string
-tags:
-  - name: Admin
