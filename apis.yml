@@ -6,7 +6,19 @@ description: >-
   activity and usage; and the Data Transfer API for migrating data between users. These APIs enable programmatic
   integration with enterprise IT infrastructure.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/google-admin-sdk.png
 url: https://raw.githubusercontent.com/api-evangelist/google-admin-sdk/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -21,26 +33,20 @@ tags:
   - Groups
   - Users
 apis:
-  - aid: google-admin-sdk:google-admin-sdk-directory-api
-    name: Google Admin SDK Directory API
-    description: >-
-      The Admin SDK Directory API enables management of users, groups, devices, organizational units, roles, domains,
-      and other directory resources in a Google Workspace domain.
-    humanURL: https://developers.google.com/workspace/admin/directory/reference/rest
-    baseURL: https://admin.googleapis.com
-    properties:
-      - type: OpenAPI
-        url: openapi/openapi.yml
-      - type: JSONSchema
-        url: json-schema/json-schema.yml
-      - type: JSONLD
-        url: json-ld/json-ld.jsonld
-    tags:
-      - Administration
-      - Devices
-      - Directory
-      - Groups
-      - Users
+- aid: google-admin-sdk:google-admin-sdk-admin-api
+  name: Google Admin SDK Admin API
+  description: The Admin API from Google Admin SDK — 11 operation(s) for admin.
+  humanURL: https://developers.google.com/workspace/admin/directory/reference/rest
+  baseURL: https://admin.googleapis.com
+  tags:
+  - Admin
+  properties:
+  - type: OpenAPI
+    url: openapi/google-admin-sdk-admin-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/json-schema.yml
+  - type: JSONLD
+    url: json-ld/json-ld.jsonld
 common:
   - type: AgenticAccess
     url: agentic-access/google-admin-sdk-agentic-access.yml
