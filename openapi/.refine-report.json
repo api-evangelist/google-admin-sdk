@@ -1,0 +1,14 @@
+{
+  "provider": "google-admin-sdk",
+  "sources": [
+    "google-admin-sdk-admin-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-admin-sdk-admin-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
