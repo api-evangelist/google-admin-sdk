@@ -1,0 +1,2123 @@
+{
+  "item": [
+    {
+      "id": "d0e3c474-764e-481d-a9a6-57d570917abd",
+      "name": "Admin",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6675a3d0-1c26-4f94-918e-fad9a29bd311",
+          "name": "Google Admin SDK List users",
+          "request": {
+            "name": "Google Admin SDK List users",
+            "description": {
+              "content": "Retrieves a paginated list of either deleted users or all users in a domain.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "domain",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "query",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "orderBy",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ff18388c-5746-46b3-a7de-7a8f2baafe79",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "domain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "query",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderBy",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"string\",\n  \"users\": [\n    {\n      \"kind\": \"string\",\n      \"id\": \"string\",\n      \"primaryEmail\": \"string\",\n      \"name\": {\n        \"givenName\": \"string\",\n        \"familyName\": \"string\",\n        \"fullName\": \"string\"\n      },\n      \"isAdmin\": false,\n      \"isDelegatedAdmin\": false,\n      \"suspended\": true,\n      \"orgUnitPath\": \"string\",\n      \"creationTime\": \"1950-09-13T22:42:12.141Z\",\n      \"lastLoginTime\": \"1964-12-25T19:57:24.020Z\",\n      \"password\": \"string\"\n    },\n    {\n      \"kind\": \"string\",\n      \"id\": \"string\",\n      \"primaryEmail\": \"string\",\n      \"name\": {\n        \"givenName\": \"string\",\n        \"familyName\": \"string\",\n        \"fullName\": \"string\"\n      },\n      \"isAdmin\": false,\n      \"isDelegatedAdmin\": true,\n      \"suspended\": true,\n      \"orgUnitPath\": \"string\",\n      \"creationTime\": \"1994-10-13T03:44:28.346Z\",\n      \"lastLoginTime\": \"1976-11-20T17:43:45.993Z\",\n      \"password\": \"string\"\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8ddb9113-4a29-481b-9d4e-c4fd02871691",
+          "name": "Google Admin SDK Create user",
+          "request": {
+            "name": "Google Admin SDK Create user",
+            "description": {
+              "content": "Creates a user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"kind\": \"<string>\",\n  \"id\": \"<string>\",\n  \"primaryEmail\": \"<string>\",\n  \"name\": {\n    \"givenName\": \"<string>\",\n    \"familyName\": \"<string>\",\n    \"fullName\": \"<string>\"\n  },\n  \"isAdmin\": \"<boolean>\",\n  \"isDelegatedAdmin\": \"<boolean>\",\n  \"suspended\": \"<boolean>\",\n  \"orgUnitPath\": \"<string>\",\n  \"creationTime\": \"<dateTime>\",\n  \"lastLoginTime\": \"<dateTime>\",\n  \"password\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d5702e9e-6fb1-459d-88bf-247f1777d103",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"kind\": \"<string>\",\n  \"id\": \"<string>\",\n  \"primaryEmail\": \"<string>\",\n  \"name\": {\n    \"givenName\": \"<string>\",\n    \"familyName\": \"<string>\",\n    \"fullName\": \"<string>\"\n  },\n  \"isAdmin\": \"<boolean>\",\n  \"isDelegatedAdmin\": \"<boolean>\",\n  \"suspended\": \"<boolean>\",\n  \"orgUnitPath\": \"<string>\",\n  \"creationTime\": \"<dateTime>\",\n  \"lastLoginTime\": \"<dateTime>\",\n  \"password\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"string\",\n  \"id\": \"string\",\n  \"primaryEmail\": \"string\",\n  \"name\": {\n    \"givenName\": \"string\",\n    \"familyName\": \"string\",\n    \"fullName\": \"string\"\n  },\n  \"isAdmin\": false,\n  \"isDelegatedAdmin\": false,\n  \"suspended\": false,\n  \"orgUnitPath\": \"string\",\n  \"creationTime\": \"1963-12-27T07:16:27.404Z\",\n  \"lastLoginTime\": \"1982-06-21T09:44:01.143Z\",\n  \"password\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9587189b-21d0-4c37-a982-913873c7c56f",
+          "name": "Google Admin SDK Get user",
+          "request": {
+            "name": "Google Admin SDK Get user",
+            "description": {
+              "content": "Retrieves a user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "users",
+                ":userKey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userKey",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "24e8db83-0655-4957-a31c-d49d7db4f7a4",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"string\",\n  \"id\": \"string\",\n  \"primaryEmail\": \"string\",\n  \"name\": {\n    \"givenName\": \"string\",\n    \"familyName\": \"string\",\n    \"fullName\": \"string\"\n  },\n  \"isAdmin\": false,\n  \"isDelegatedAdmin\": false,\n  \"suspended\": false,\n  \"orgUnitPath\": \"string\",\n  \"creationTime\": \"1963-12-27T07:16:27.404Z\",\n  \"lastLoginTime\": \"1982-06-21T09:44:01.143Z\",\n  \"password\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "57e064b7-c49d-4644-b678-f76340bc1418",
+          "name": "Google Admin SDK Update user",
+          "request": {
+            "name": "Google Admin SDK Update user",
+            "description": {
+              "content": "Updates a user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "users",
+                ":userKey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userKey",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"kind\": \"<string>\",\n  \"id\": \"<string>\",\n  \"primaryEmail\": \"<string>\",\n  \"name\": {\n    \"givenName\": \"<string>\",\n    \"familyName\": \"<string>\",\n    \"fullName\": \"<string>\"\n  },\n  \"isAdmin\": \"<boolean>\",\n  \"isDelegatedAdmin\": \"<boolean>\",\n  \"suspended\": \"<boolean>\",\n  \"orgUnitPath\": \"<string>\",\n  \"creationTime\": \"<dateTime>\",\n  \"lastLoginTime\": \"<dateTime>\",\n  \"password\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "40ca8d95-5def-41e5-bccd-7b44ec600625",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"kind\": \"<string>\",\n  \"id\": \"<string>\",\n  \"primaryEmail\": \"<string>\",\n  \"name\": {\n    \"givenName\": \"<string>\",\n    \"familyName\": \"<string>\",\n    \"fullName\": \"<string>\"\n  },\n  \"isAdmin\": \"<boolean>\",\n  \"isDelegatedAdmin\": \"<boolean>\",\n  \"suspended\": \"<boolean>\",\n  \"orgUnitPath\": \"<string>\",\n  \"creationTime\": \"<dateTime>\",\n  \"lastLoginTime\": \"<dateTime>\",\n  \"password\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"string\",\n  \"id\": \"string\",\n  \"primaryEmail\": \"string\",\n  \"name\": {\n    \"givenName\": \"string\",\n    \"familyName\": \"string\",\n    \"fullName\": \"string\"\n  },\n  \"isAdmin\": false,\n  \"isDelegatedAdmin\": false,\n  \"suspended\": false,\n  \"orgUnitPath\": \"string\",\n  \"creationTime\": \"1963-12-27T07:16:27.404Z\",\n  \"lastLoginTime\": \"1982-06-21T09:44:01.143Z\",\n  \"password\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "71808f36-32dd-4917-8fa6-cf8e3d26ddd9",
+          "name": "Google Admin SDK Patch user",
+          "request": {
+            "name": "Google Admin SDK Patch user",
+            "description": {
+              "content": "Patches a user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "users",
+                ":userKey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userKey",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"kind\": \"<string>\",\n  \"id\": \"<string>\",\n  \"primaryEmail\": \"<string>\",\n  \"name\": {\n    \"givenName\": \"<string>\",\n    \"familyName\": \"<string>\",\n    \"fullName\": \"<string>\"\n  },\n  \"isAdmin\": \"<boolean>\",\n  \"isDelegatedAdmin\": \"<boolean>\",\n  \"suspended\": \"<boolean>\",\n  \"orgUnitPath\": \"<string>\",\n  \"creationTime\": \"<dateTime>\",\n  \"lastLoginTime\": \"<dateTime>\",\n  \"password\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "17de3e8a-5fb3-4f37-8063-92d09f24ae03",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"kind\": \"<string>\",\n  \"id\": \"<string>\",\n  \"primaryEmail\": \"<string>\",\n  \"name\": {\n    \"givenName\": \"<string>\",\n    \"familyName\": \"<string>\",\n    \"fullName\": \"<string>\"\n  },\n  \"isAdmin\": \"<boolean>\",\n  \"isDelegatedAdmin\": \"<boolean>\",\n  \"suspended\": \"<boolean>\",\n  \"orgUnitPath\": \"<string>\",\n  \"creationTime\": \"<dateTime>\",\n  \"lastLoginTime\": \"<dateTime>\",\n  \"password\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"string\",\n  \"id\": \"string\",\n  \"primaryEmail\": \"string\",\n  \"name\": {\n    \"givenName\": \"string\",\n    \"familyName\": \"string\",\n    \"fullName\": \"string\"\n  },\n  \"isAdmin\": false,\n  \"isDelegatedAdmin\": false,\n  \"suspended\": false,\n  \"orgUnitPath\": \"string\",\n  \"creationTime\": \"1963-12-27T07:16:27.404Z\",\n  \"lastLoginTime\": \"1982-06-21T09:44:01.143Z\",\n  \"password\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "02f6ff00-4902-489e-b9a2-869a225263c9",
+          "name": "Google Admin SDK Delete user",
+          "request": {
+            "name": "Google Admin SDK Delete user",
+            "description": {
+              "content": "Deletes a user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "users",
+                ":userKey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userKey",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9bdbf5cc-2136-42c9-af8e-1400cbe1b585",
+              "name": "Successful deletion",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "17d28f86-ac98-4405-bb99-048cdfa22a9b",
+          "name": "Google Admin SDK Make user admin",
+          "request": {
+            "name": "Google Admin SDK Make user admin",
+            "description": {
+              "content": "Makes a user a super administrator.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "users",
+                ":userKey",
+                "makeAdmin"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "userKey",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4892004e-0725-403f-bc05-06f2e75c3f40",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "users",
+                    ":userKey",
+                    "makeAdmin"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "userKey",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2d4a75c6-7a71-494d-9f0f-827c4db416e7",
+          "name": "Google Admin SDK List groups",
+          "request": {
+            "name": "Google Admin SDK List groups",
+            "description": {
+              "content": "Retrieves all groups of a domain or a user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "groups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "domain",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customer",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "userKey",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5747cf06-d97d-4e45-88e1-56476b4667c6",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "domain",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "customer",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "userKey",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"string\",\n  \"groups\": [\n    {\n      \"kind\": \"string\",\n      \"id\": \"string\",\n      \"email\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"directMembersCount\": \"string\"\n    },\n    {\n      \"kind\": \"string\",\n      \"id\": \"string\",\n      \"email\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"directMembersCount\": \"string\"\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7ad89326-5cac-495d-8531-03c5e7bf38a7",
+          "name": "Google Admin SDK Create group",
+          "request": {
+            "name": "Google Admin SDK Create group",
+            "description": {
+              "content": "Creates a group.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "groups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"kind\": \"<string>\",\n  \"id\": \"<string>\",\n  \"email\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"directMembersCount\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b257f7ca-0f15-428a-a6c2-a667112229e4",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"kind\": \"<string>\",\n  \"id\": \"<string>\",\n  \"email\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"directMembersCount\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"string\",\n  \"id\": \"string\",\n  \"email\": \"string\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"directMembersCount\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "790c8566-2520-486c-914c-446b391e498d",
+          "name": "Google Admin SDK Get group",
+          "request": {
+            "name": "Google Admin SDK Get group",
+            "description": {
+              "content": "Retrieves a group's properties.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "groups",
+                ":groupKey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "groupKey",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f137d704-41c8-4227-9ef2-0d5bf89f53fc",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups",
+                    ":groupKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "groupKey",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"string\",\n  \"id\": \"string\",\n  \"email\": \"string\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"directMembersCount\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "064247c8-a505-4f9e-b94b-aa01dfe58e02",
+          "name": "Google Admin SDK Update group",
+          "request": {
+            "name": "Google Admin SDK Update group",
+            "description": {
+              "content": "Updates a group's properties.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "groups",
+                ":groupKey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "groupKey",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"kind\": \"<string>\",\n  \"id\": \"<string>\",\n  \"email\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"directMembersCount\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7f3882bd-ed39-4cfb-9c80-f8ea8506dc5c",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups",
+                    ":groupKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "groupKey",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"kind\": \"<string>\",\n  \"id\": \"<string>\",\n  \"email\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"directMembersCount\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"string\",\n  \"id\": \"string\",\n  \"email\": \"string\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"directMembersCount\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1de8cd9d-f580-4f8d-b5ec-c4f39bf8378f",
+          "name": "Google Admin SDK Delete group",
+          "request": {
+            "name": "Google Admin SDK Delete group",
+            "description": {
+              "content": "Deletes a group.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "groups",
+                ":groupKey"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "groupKey",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8c24e804-9d20-4731-846c-d11bb67423b0",
+              "name": "Successful deletion",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups",
+                    ":groupKey"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "groupKey",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d99d3c6d-8d50-42e8-ba67-ca540bb2d0f0",
+          "name": "Google Admin SDK List group members",
+          "request": {
+            "name": "Google Admin SDK List group members",
+            "description": {
+              "content": "Retrieves a paginated list of all members in a group.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "groups",
+                ":groupKey",
+                "members"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "groupKey",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "09eed83e-f6d2-4422-ad26-7da7311618d9",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups",
+                    ":groupKey",
+                    "members"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "groupKey",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"string\",\n  \"members\": [\n    {\n      \"kind\": \"string\",\n      \"id\": \"string\",\n      \"email\": \"string\",\n      \"role\": \"OWNER\",\n      \"type\": \"GROUP\"\n    },\n    {\n      \"kind\": \"string\",\n      \"id\": \"string\",\n      \"email\": \"string\",\n      \"role\": \"MANAGER\",\n      \"type\": \"EXTERNAL\"\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "810df340-b10a-4240-8474-c997b5954eac",
+          "name": "Google Admin SDK Add group member",
+          "request": {
+            "name": "Google Admin SDK Add group member",
+            "description": {
+              "content": "Adds a user to the specified group.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "groups",
+                ":groupKey",
+                "members"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "groupKey",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"kind\": \"<string>\",\n  \"id\": \"<string>\",\n  \"email\": \"<string>\",\n  \"role\": \"<string>\",\n  \"type\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a0d2c92b-dc27-4bf9-aa78-387b53645a96",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "groups",
+                    ":groupKey",
+                    "members"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "groupKey",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"kind\": \"<string>\",\n  \"id\": \"<string>\",\n  \"email\": \"<string>\",\n  \"role\": \"<string>\",\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"string\",\n  \"id\": \"string\",\n  \"email\": \"string\",\n  \"role\": \"MANAGER\",\n  \"type\": \"EXTERNAL\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "13477bce-be68-469e-912b-0da123b946e0",
+          "name": "Google Admin SDK List organizational units",
+          "request": {
+            "name": "Google Admin SDK List organizational units",
+            "description": {
+              "content": "Retrieves a list of all organizational units for an account.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "customer",
+                ":customerId",
+                "orgunits"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "customerId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b21e48ad-bb1d-4f13-bcd7-21097adfd389",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "customer",
+                    ":customerId",
+                    "orgunits"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "customerId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"string\",\n  \"organizationUnits\": [\n    {\n      \"kind\": \"string\",\n      \"orgUnitId\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"orgUnitPath\": \"string\",\n      \"parentOrgUnitPath\": \"string\",\n      \"parentOrgUnitId\": \"string\"\n    },\n    {\n      \"kind\": \"string\",\n      \"orgUnitId\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"orgUnitPath\": \"string\",\n      \"parentOrgUnitPath\": \"string\",\n      \"parentOrgUnitId\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8a36e9e4-37cb-4623-bda1-512d0ecfcc4f",
+          "name": "Google Admin SDK Create organizational unit",
+          "request": {
+            "name": "Google Admin SDK Create organizational unit",
+            "description": {
+              "content": "Adds an organizational unit.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "customer",
+                ":customerId",
+                "orgunits"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "customerId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"kind\": \"<string>\",\n  \"orgUnitId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"orgUnitPath\": \"<string>\",\n  \"parentOrgUnitPath\": \"<string>\",\n  \"parentOrgUnitId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6382a852-2c2e-40ef-a70b-808266a41532",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "customer",
+                    ":customerId",
+                    "orgunits"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "customerId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"kind\": \"<string>\",\n  \"orgUnitId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"orgUnitPath\": \"<string>\",\n  \"parentOrgUnitPath\": \"<string>\",\n  \"parentOrgUnitId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"string\",\n  \"orgUnitId\": \"string\",\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"orgUnitPath\": \"string\",\n  \"parentOrgUnitPath\": \"string\",\n  \"parentOrgUnitId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "67aad785-e80a-4ab0-8d5e-464779515d5e",
+          "name": "Google Admin SDK List Chrome OS devices",
+          "request": {
+            "name": "Google Admin SDK List Chrome OS devices",
+            "description": {
+              "content": "Retrieves a paginated list of Chrome OS devices.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "customer",
+                ":customerId",
+                "devices",
+                "chromeos"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "customerId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "67bfcc6e-c919-4517-81aa-062daa09e2ed",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "customer",
+                    ":customerId",
+                    "devices",
+                    "chromeos"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "customerId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"kind\": \"string\",\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2bd73dbc-8348-4129-bce1-d1bd04a68059",
+          "name": "Google Admin SDK List mobile devices",
+          "request": {
+            "name": "Google Admin SDK List mobile devices",
+            "description": {
+              "content": "Retrieves a paginated list of all user-owned mobile devices.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "customer",
+                ":customerId",
+                "devices",
+                "mobile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "customerId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ec3c6f10-191f-4436-82e6-8c180626067e",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "customer",
+                    ":customerId",
+                    "devices",
+                    "mobile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "customerId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "08e28732-fca2-4ef7-b298-59496bddc5b2",
+          "name": "Google Admin SDK List roles",
+          "request": {
+            "name": "Google Admin SDK List roles",
+            "description": {
+              "content": "Retrieves a paginated list of all the roles in a domain.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "customer",
+                ":customerId",
+                "roles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "customerId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "aacb4881-7356-458f-9a77-1a5ad82a0fb8",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "customer",
+                    ":customerId",
+                    "roles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "customerId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f34a35f7-fc01-4c24-9d61-5134f4307da7",
+          "name": "Google Admin SDK List domains",
+          "request": {
+            "name": "Google Admin SDK List domains",
+            "description": {
+              "content": "Lists the domains of the customer.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "admin",
+                "directory",
+                "v1",
+                "customer",
+                ":customer",
+                "domains"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "customer",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fd40a60a-5812-44c6-92ff-f03a5cca7618",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "admin",
+                    "directory",
+                    "v1",
+                    "customer",
+                    ":customer",
+                    "domains"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "customer",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://admin.googleapis.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "63787b05-d990-4e51-98b4-acf690e750bd",
+    "name": "Google SDK Directory Admin API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Admin SDK Directory API enables management of users, groups, devices, organizational units, roles, domains, and other directory resources in a Google Workspace domain.\n\nContact Support:\n Name: Google",
+      "type": "text/plain"
+    }
+  }
+}
