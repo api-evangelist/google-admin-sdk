@@ -469,17 +469,6 @@ paths:
       - Admin
 components:
   schemas:
-    Users:
-      type: object
-      properties:
-        kind:
-          type: string
-        users:
-          type: array
-          items:
-            $ref: '#/components/schemas/User'
-        nextPageToken:
-          type: string
     Member:
       type: object
       properties:
@@ -535,17 +524,6 @@ components:
           format: date-time
         password:
           type: string
-    Groups:
-      type: object
-      properties:
-        kind:
-          type: string
-        groups:
-          type: array
-          items:
-            $ref: '#/components/schemas/Group'
-        nextPageToken:
-          type: string
     Group:
       type: object
       properties:
@@ -570,6 +548,17 @@ components:
           type: array
           items:
             type: object
+        nextPageToken:
+          type: string
+    Users:
+      type: object
+      properties:
+        kind:
+          type: string
+        users:
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
         nextPageToken:
           type: string
     OrgUnit:
@@ -609,3 +598,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/OrgUnit'
+    Groups:
+      type: object
+      properties:
+        kind:
+          type: string
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/Group'
+        nextPageToken:
+          type: string
