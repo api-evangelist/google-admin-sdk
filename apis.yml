@@ -69,6 +69,12 @@ apis:
   - type: JSONLD
     url: json-ld/json-ld.jsonld
 common:
+  - type: Plans
+    url: plans/google-admin-sdk-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/google-admin-sdk-rate-limits.yml
+  - type: FinOps
+    url: finops/google-admin-sdk-finops.yml
   - type: CapabilityMap
     url: capabilities/google-admin-sdk-capability-edges.yml
     name: Google Admin SDK Business Capability Map
