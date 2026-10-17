@@ -484,6 +484,59 @@ components:
           type: string
         directMembersCount:
           type: string
+    Users:
+      type: object
+      properties:
+        kind:
+          type: string
+        users:
+          type: array
+          items:
+            $ref: '#/components/schemas/User'
+        nextPageToken:
+          type: string
+    OrgUnits:
+      type: object
+      properties:
+        kind:
+          type: string
+        organizationUnits:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrgUnit'
+    Members:
+      type: object
+      properties:
+        kind:
+          type: string
+        members:
+          type: array
+          items:
+            $ref: '#/components/schemas/Member'
+        nextPageToken:
+          type: string
+    ChromeOsDevices:
+      type: object
+      properties:
+        kind:
+          type: string
+        chromeosdevices:
+          type: array
+          items:
+            type: object
+        nextPageToken:
+          type: string
+    Groups:
+      type: object
+      properties:
+        kind:
+          type: string
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/Group'
+        nextPageToken:
+          type: string
     Member:
       type: object
       properties:
@@ -505,27 +558,22 @@ components:
           - USER
           - GROUP
           - EXTERNAL
-    Users:
+    OrgUnit:
       type: object
       properties:
         kind:
           type: string
-        users:
-          type: array
-          items:
-            $ref: '#/components/schemas/User'
-        nextPageToken:
+        orgUnitId:
           type: string
-    ChromeOsDevices:
-      type: object
-      properties:
-        kind:
+        name:
           type: string
-        chromeosdevices:
-          type: array
-          items:
-            type: object
-        nextPageToken:
+        description:
+          type: string
+        orgUnitPath:
+          type: string
+        parentOrgUnitPath:
+          type: string
+        parentOrgUnitId:
           type: string
     User:
       type: object
@@ -560,52 +608,4 @@ components:
           type: string
           format: date-time
         password:
-          type: string
-    Members:
-      type: object
-      properties:
-        kind:
-          type: string
-        members:
-          type: array
-          items:
-            $ref: '#/components/schemas/Member'
-        nextPageToken:
-          type: string
-    Groups:
-      type: object
-      properties:
-        kind:
-          type: string
-        groups:
-          type: array
-          items:
-            $ref: '#/components/schemas/Group'
-        nextPageToken:
-          type: string
-    OrgUnits:
-      type: object
-      properties:
-        kind:
-          type: string
-        organizationUnits:
-          type: array
-          items:
-            $ref: '#/components/schemas/OrgUnit'
-    OrgUnit:
-      type: object
-      properties:
-        kind:
-          type: string
-        orgUnitId:
-          type: string
-        name:
-          type: string
-        description:
-          type: string
-        orgUnitPath:
-          type: string
-        parentOrgUnitPath:
-          type: string
-        parentOrgUnitId:
           type: string
